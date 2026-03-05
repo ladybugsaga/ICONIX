@@ -7,7 +7,13 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- Blog posts (mirrored from Blogger) -->
+  <!-- Blog posts (automatically mirrored from Blogger) -->
+  <url>
+    <loc>https://beyonddennis.shop/2026/03/cars.html</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://beyonddennis.shop/2026/03/example.html</loc>
     <lastmod>2026-03-05</lastmod>
