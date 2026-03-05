@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ladybugsaga.github.io/ICONIX/sitemap.xml

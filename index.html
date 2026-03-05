@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>ICONIX — Blog</title>
+    <meta name="description"
+        content="ICONIX — A curated blog featuring tours, examples, and original content. Explore the latest posts and stories." />
+    <meta name="keywords" content="ICONIX, blog, tours, stories, content" />
+    <meta name="author" content="ICONIX" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ICONIX — Blog" />
+    <meta property="og:description" content="Explore the latest posts and stories on ICONIX." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://iconix254.github.io/ICONIX/" />
+
+    <!-- Favicon (gradient square) -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236c5ce7'/><text x='50' y='68' font-size='52' font-weight='900' text-anchor='middle' fill='white'>I</text></svg>" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+
+    <!-- Iframe Embed -->
+    <div class="iframe-wrapper fullscreen" id="iframe-wrapper">
+        <div class="loader" id="loader">
+            <div class="loader__spinner"></div>
+            <span class="loader__text">Loading ICONIX blog…</span>
+        </div>
+
+        <!-- Blog Iframe -->
+        <iframe id="blog-frame" class="iframe-wrapper__frame" src="https://iconix254.blogspot.com/" title="ICONIX Blog"
+            loading="eager"
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <!-- Fallback (if iframe blocked) -->
+        <div class="fallback" id="fallback">
+            <div class="fallback__icon">📝</div>
+            <h1 class="fallback__heading">ICONIX</h1>
+            <p class="fallback__subtext">
+                The blog content is best viewed directly on our Blogspot site.
+                Click below to read the latest posts, tours, and stories.
+            </p>
+            <a href="https://iconix254.blogspot.com/" target="_blank" rel="noopener noreferrer" class="fallback__btn">
+                Open ICONIX Blog
+                <span>→</span>
+            </a>
+            <span class="fallback__link">iconix254.blogspot.com</span>
+        </div>
+    </div>
+
+    <script>
+        (() => {
+            const iframe = document.getElementById('blog-frame');
+            const loader = document.getElementById('loader');
+            const fallback = document.getElementById('fallback');
+            let loaded = false;
+
+            iframe.addEventListener('load', () => {
+                loaded = true;
+                loader.classList.add('hidden');
+                iframe.classList.add('loaded');
+            });
+
+            setTimeout(() => {
+                if (!loaded) {
+                    showFallback();
+                } else {
+                    try {
+                        const doc = iframe.contentDocument || iframe.contentWindow.document;
+                        if (!doc || !doc.body || doc.body.innerHTML.length < 50) {
+                            showFallback();
+                        }
+                    } catch (e) { /* cross-origin — keep iframe */ }
+                }
+            }, 6000);
+
+            function showFallback() {
+                loader.classList.add('hidden');
+                iframe.style.display = 'none';
+                fallback.classList.add('active');
+            }
+        })();
+    </script>
+</body>
+
+</html>
