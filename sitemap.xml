@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://beyonddennis.shop/</loc>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main site pages -->
+  <sitemap>
+    <loc>https://beyonddennis.shop/sitemap-pages.xml</loc>
     <lastmod>2026-03-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://beyonddennis.shop/404.html</loc>
+  </sitemap>
+  <!-- Blogger blog posts (auto-updates when new posts are added) -->
+  <sitemap>
+    <loc>https://iconix254.blogspot.com/sitemap.xml</loc>
     <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.1</priority>
-  </url>
-</urlset>
+  </sitemap>
+</sitemapindex>
